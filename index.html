@@ -8,9 +8,176 @@ td:first-child,th:first-child{text-align:left}img{max-width:100%}.note{color:#6b
 .scroll{overflow-x:auto}
 </style></head><body>
 <h1>NFIRS holiday-season fire analysis</h1>
-<p class='note'>Scope: <b>all departments (national)</b>. Years: 2020, 2021, 2022, 2023, 2024, 2025. Generated 2026-10-21 14:10. Primary incidents only (EXP_NO = 0); exposure fires excluded. Aid-given records (AID 3, 4, 5) excluded to avoid double counting. Residential = PROP_USE 400–499; structure fire = INC_TYPE 110–118, 120–123.</p>
+<p class='note'>Scope: <b>all departments (national)</b>. Years: 2020, 2021, 2022, 2023, 2024, 2025. Generated 2026-10-21 14:12. Primary incidents only (EXP_NO = 0); exposure fires excluded. Aid-given records (AID 3, 4, 5) excluded to avoid double counting. Residential = PROP_USE 400–499; structure fire = INC_TYPE 110–118, 120–123.</p>
 <h2>Summary</h2>
 <div class='verdict'><b>H1 — Thanksgiving the top day for residential structure fires:</b> Thanksgiving was the #1 day of Nov–Dec in <b>5 of 6</b> years and the #1 day of the whole year in <b>4 of 6</b>. On average Thanksgiving had 2.06× the typical Nov–Dec day (median rank 1 of 61).</div><div class='verdict'>Split by fire type: for <i>confined cooking fires</i> Thanksgiving averaged 3.64× a typical Nov–Dec day; for <i>non-confined</i> (the larger, more damaging fires) it averaged 1.12× (median rank 17). This shows how much of any Thanksgiving peak is driven by small kitchen fires.</div><div class='verdict'><b>H2 — Holiday season elevated:</b> residential structure fires per day were higher in Nov–Dec than Jan–Oct in <b>5 of 6</b> years. Busiest month by year: Jan (3×), Feb (1×), Dec (1×), Nov (1×). If January/February rival or beat Nov–Dec, the pattern is a winter (heating) effect rather than a holiday effect — compare the 'excl. holidays' column.</div><div class='verdict'>For <i>all fires</i> (including outdoor, vehicle, brush), Nov–Dec was higher than Jan–Oct in <b>0 of 6</b> years.</div>
+<h2>Claim check — the “17 million holiday fires” survey statistic</h2><p class='note'>The claim: nearly 17 million Americans (7%) report having personally experienced a home fire during the holiday season; cooking/baking caused 31%, and 29% involved electrical wiring, outlets or rechargeable-battery appliances. NFIRS figures below are residential structure fires, Nov 1 – Dec 31, seasons 2020, 2021, 2022, 2023, 2024. 2025 excluded because its Nov–Dec data looks incomplete (see the completeness table).</p><div class='verdict'><b>Cooking:</b> NFIRS shows cooking as the cause of <b>39.2%</b> of Nov–Dec residential structure fires (48.4% of those with a known cause). The survey's 31% is 8 points below what fire departments record.</div><div class='verdict'><b>Electrical / battery devices:</b> even the most generous NFIRS grouping — electrical malfunction + appliances + equipment failure — accounts for <b>9.8%</b> of fires (12.1% of those with a known cause), against the survey's 29%. NFIRS has no battery-specific cause code, so battery fires fall within these categories. The survey's 29% is 19 points above what fire departments record.</div><div class='verdict'><b>Scale:</b> fire departments reported <b>35,515–45,941</b> residential structure fires per Nov–Dec season to NFIRS (average 40,199; about 263 civilian deaths per season). 17 million people is about 6.8 million households at 2.5 people each — <b>about 169×</b> the reported fires in one season. The survey figure can only be reconciled as <i>lifetime</i> recall that counts small fires never reported to a fire department; it does not describe how many holiday fires happen in a year. Ask for the exact question wording, timeframe, definition of “fire”, sample and sponsor.</div><p class='note'>NFIRS participation is voluntary and not every department reports, so NFIRS undercounts fire-department responses; it also never captures fires handled without calling the fire department. The cause shares are less affected than the totals.</p><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Survey claim</th>
+      <th>NFIRS comparison</th>
+      <th>% of all fires</th>
+      <th>% of known-cause fires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cooking/baking = 31%</td>
+      <td>Cooking (05)</td>
+      <td>39.2</td>
+      <td>48.4</td>
+    </tr>
+    <tr>
+      <td>Electrical wiring/outlets/battery devices = 29%</td>
+      <td>Electrical malfunction (06)</td>
+      <td>5.8</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>+ Appliances (07)</td>
+      <td>8.0</td>
+      <td>9.9</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>+ Equipment misoperation/failure (14) — most generous</td>
+      <td>9.8</td>
+      <td>12.1</td>
+    </tr>
+  </tbody>
+</table></div><h3>All Nov–Dec residential structure fires by cause</h3><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cause</th>
+      <th>Nov-Dec fires</th>
+      <th>% of all fires</th>
+      <th>% of fires with known cause</th>
+    </tr>
+    <tr>
+      <th>code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>05</th>
+      <td>Cooking</td>
+      <td>78837</td>
+      <td>39.2</td>
+      <td>48.4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Unknown</td>
+      <td>38061</td>
+      <td>18.9</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>04</th>
+      <td>Heating</td>
+      <td>20633</td>
+      <td>10.3</td>
+      <td>12.7</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Other unintentional, careless</td>
+      <td>14622</td>
+      <td>7.3</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>06</th>
+      <td>Electrical malfunction</td>
+      <td>11624</td>
+      <td>5.8</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <th>08</th>
+      <td>Open flame</td>
+      <td>7798</td>
+      <td>3.9</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <th>01</th>
+      <td>Intentional</td>
+      <td>7073</td>
+      <td>3.5</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>09</th>
+      <td>Other heat</td>
+      <td>5160</td>
+      <td>2.6</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>07</th>
+      <td>Appliances</td>
+      <td>4457</td>
+      <td>2.2</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Equipment misoperation, failure</td>
+      <td>3682</td>
+      <td>1.8</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>03</th>
+      <td>Smoking</td>
+      <td>2671</td>
+      <td>1.3</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Other equipment</td>
+      <td>2325</td>
+      <td>1.2</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Investigation with Arson Module</td>
+      <td>1847</td>
+      <td>0.9</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Natural</td>
+      <td>1361</td>
+      <td>0.7</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>02</th>
+      <td>Playing with heat source</td>
+      <td>500</td>
+      <td>0.2</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Exposure</td>
+      <td>346</td>
+      <td>0.2</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table></div>
 <h2>Data completeness — all incidents per month</h2>
 <p class='note'>Check this first. NFIRS participation is voluntary and the most recent year can be partial; a thin month will distort every comparison below.</p>
 <div class="scroll"><table class="dataframe">
